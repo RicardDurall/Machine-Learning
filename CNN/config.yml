@@ -1,0 +1,29 @@
+train_dir : /home/ricard/Desktop/Kaggle/Plants/train/
+val_dir : /home/ricard/Desktop/Kaggle/Plants/val/
+test_dir : /home/ricard/Desktop/Kaggle/Plants/test/
+weights_dir : /home/ricard/Desktop/Kaggle/Plants/weightsX
+log_dir : /home/ricard/Desktop/Kaggle/Plants/logX
+
+
+#options vgg16, mobileNet and their frozen layers
+model_selected : mobileNet
+model_type :
+    vgg16:
+        frozen : 19
+        size image : 224
+    mobileNet:
+        frozen : 51
+        size image : 224
+    xception:
+        frozen : 125
+        size image : 299
+    mnist:
+        frozen : 0
+        size image : 28
+
+
+batch_size : 32
+num_classes : 12
+epochs : 1
+data_augmentation : False
+num_folds : 1
