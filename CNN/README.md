@@ -6,7 +6,7 @@ Usage:
 
 config.yml -> it contains the main parameters of the CNN.
 
-Assemble.py -> it makes the prediction and produces a .csv as an output (for the competition).
+Predict.py -> it makes the prediction and produces a .csv as an output (for the competition).
 
 CNN.py -> it has implemented the training and it is used a generator provided by Keras.
 
