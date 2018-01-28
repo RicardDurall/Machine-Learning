@@ -4,9 +4,7 @@ import yaml
 from keras import __version__ as keras_version
 from keras.callbacks import ModelCheckpoint, EarlyStopping, CSVLogger
 
-import argparse
-import pickle  # for handling the new data source
-import h5py  # for saving the model
+
 import keras
 from datetime import datetime  # for filename conventions
 from keras.models import Sequential
@@ -36,31 +34,6 @@ num_classes = cfg['num_classes']
 epochs = cfg['epochs']
 optimizer = cfg['optimizer']
 batch_size = cfg['batch_size']
-'''
-
-train_dir = "/images_prepped_train"
-train_label = "/annotations_prepped_train"
-val_dir = "/images_prepped_test"
-val_label = "/annotations_prepped_test"
-train_dir = "/images_prepped_train"
-train_label = "/annotations_prepped_train"
-val_dir = "/images_prepped_test"
-val_label = "/annotations_prepped_test"
-#test_dir = /home/ricard/Desktop/Kaggle/SS/dataset1/images_prepped_test
-#test_output = /home/ricard/Desktop/Kaggle/SS/dataset1
-#weights_dir = /home/ricard/Desktop/Kaggle/Plants/weights.hdf5
-#log_dir = /home/ricard/Desktop/Kaggle/Plants/log.csv
-
-model_selected = "segnet"
-input_height = 360
-input_width = 480
-batch_size = 32
-num_classes = 10
-epochs = 1
-data_augmentation = False
-optimizer = "adadelta"
-'''
-
 
 # Parameters
 params = {'dim_x': input_height,
@@ -112,10 +85,10 @@ def run_models():
 	X_valid, Y_valid = get_images(val_dir,val_label)
 
 	# callbacks functions
-	#checkpoint = ModelCheckpoint(weights_dir, monitor='val_loss', verbose=1, save_best_only=True, mode='min', period=1)
-	#earlystop = EarlyStopping(monitor='val_loss', min_delta=0.0001, patience=3, verbose=1, mode='auto')
-	#csv_logger = CSVLogger(log_dir)
-	#callbacks = [checkpoint, earlystop, csv_logger]
+	checkpoint = ModelCheckpoint(weights_dir, monitor='val_loss', verbose=1, save_best_only=True, mode='min', period=1)
+	earlystop = EarlyStopping(monitor='val_loss', min_delta=0.0001, patience=3, verbose=1, mode='auto')
+	csv_logger = CSVLogger(log_dir)
+	callbacks = [checkpoint, earlystop, csv_logger]
 
 
 	model, model_h, model_w  = get_model()
@@ -131,28 +104,13 @@ def run_models():
 						epochs=epochs,
 						validation_data=validation_generator,
 						validation_steps=len(X_valid) // batch_size,
-						verbose=1)
-						#callbacks=callbacks)
+						verbose=1),
+						callbacks=callbacks)
 
 
 
 if __name__ == '__main__':
 	print('Keras version: {}'.format(keras_version))
-
-	'''
-	# Parse the input arguments for common Cloud ML Engine options
-	parser = argparse.ArgumentParser()
-	parser.add_argument(
-		'--train-file',
-		help='Cloud Storage bucket or local path to training data')
-	parser.add_argument(
-		'--job-dir',
-		help='Cloud storage bucket to export the model and store temp files')
-	args = parser.parse_args()
-	arguments = args.__dict__
-
-	run_models(**arguments)
-		'''
 	run_models()
 
 
