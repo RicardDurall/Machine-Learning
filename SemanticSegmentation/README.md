@@ -1,6 +1,7 @@
+<h1>Semantic Segmentation</h1>
 In this folder a NN is used to try to solve a semantic segmenation problem.
 
-The architecure of the NN is <a href=https://arxiv.org/pdf/1511.00561.pdf >Segnet</a>
+The architecure of the NN is <a href=https://arxiv.org/pdf/1511.00561.pdf >Segnet</a>.
 
 Usage:
  <ul>
