@@ -1,0 +1,17 @@
+train_dir : /home/ricard/Desktop/Kaggle/SS/dataset1/images_prepped_train
+train_label : /home/ricard/Desktop/Kaggle/SS/dataset1/annotations_prepped_train
+val_dir : /home/ricard/Desktop/Kaggle/SS/dataset1/images_prepped_test
+val_label : /home/ricard/Desktop/Kaggle/SS/dataset1/annotations_prepped_test
+test_dir : /home/ricard/Desktop/Kaggle/SS/dataset1/images_prepped_test
+test_output : /home/ricard/Desktop/Kaggle/SS/dataset1
+weights_dir : /home/ricard/Desktop/Kaggle/Plants/weights.hdf5
+log_dir : /home/ricard/Desktop/Kaggle/Plants/log.csv
+
+model_selected : segnet
+input_height : 360
+input_width : 480
+batch_size : 8
+num_classes : 10
+epochs : 1
+data_augmentation : False
+optimizer : adadelta

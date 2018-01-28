@@ -1,0 +1,73 @@
+import numpy as np
+from keras.preprocessing import image
+from keras.utils import np_utils
+
+
+class DataGenerator(object):
+  'Generates data for Keras'
+  def __init__(self, dim_x = 224, dim_y =224, dim_z = 3, batch_size = 32, shuffle = True, num_classes=10):
+      'Initialization'
+      self.dim_x = dim_x
+      self.dim_y = dim_y
+      self.dim_z = dim_z
+      self.batch_size = batch_size
+      self.shuffle = shuffle
+      self.num_classes = num_classes
+
+  def generate(self, labels, list_IDs, output_h, output_w):
+      'Generates batches of samples'
+      # Infinite loop
+      while 1:
+          # Generate order of exploration of dataset
+          indexes = self.__get_exploration_order(list_IDs)
+
+          # Generate batches
+          imax = int(len(indexes)/self.batch_size)
+          for i in range(imax):
+              # Find list of IDs
+              list_IDs_temp = [list_IDs[k] for k in indexes[i*self.batch_size:(i+1)*self.batch_size]]
+              labels_temp = [labels[k] for k in indexes[i*self.batch_size:(i+1)*self.batch_size]]
+              # Generate data
+              X, y = self.__data_generation(labels_temp, list_IDs_temp, output_h, output_w)
+
+              yield X, y
+
+  def __get_exploration_order(self, list_IDs):
+      'Generates order of exploration'
+      # Find exploration order
+      indexes = np.arange(len(list_IDs))
+      if self.shuffle == True:
+          np.random.shuffle(indexes)
+
+      return indexes
+
+  def __data_generation(self, labels, list_IDs_temp, output_h, output_w):
+      'Generates data of batch_size samples' # X : (n_samples, v_size, v_size, v_size, n_channels)
+      # Initialization
+      X = np.empty((self.batch_size, self.dim_x, self.dim_y, self.dim_z))
+      Y = np.empty((self.batch_size, output_h*output_w, self.num_classes))
+      y = np.empty(( output_h, output_w, self.num_classes))
+
+      # Generate data
+      for i, ID in enumerate(list_IDs_temp):
+
+          img = image.load_img(ID, target_size=(self.dim_x, self.dim_y))
+          data = image.img_to_array(img)
+
+          # Store volume
+          X[i, :, :, :] = data
+
+      for i, ID in enumerate(labels):
+
+          img = image.load_img(ID, target_size=(output_h, output_w))
+          data = image.img_to_array(img)
+          data = data[:,:,0]
+
+          for c in range(self.num_classes):
+              y[:, :, c] = (data == c).astype(int)
+
+          res = np.reshape(y, (output_h*output_w, self.num_classes))
+          Y[i, :, :] = res
+
+      return X, Y
+
