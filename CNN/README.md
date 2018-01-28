@@ -1,6 +1,6 @@
 <h1>CNN for classification</h1>
 
-In this folder a CNN is used to try to solve a classification problem. Sevreal architectures are implemented.
+In this folder a CNN is used to try to solve a classification problem. Several architectures are implemented.
 
 For more details about the problem check the <a href="https://www.kaggle.com/c/plant-seedlings-classification">Kaggle </a> competiton.
 
