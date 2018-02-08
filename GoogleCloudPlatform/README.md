@@ -1,5 +1,5 @@
 <h1>Create Virtual Machine and its dependencies</h4>
-<h4>First of all create an account on Google Clous Platform.</h4>
+<h4>First of all create an account on Google Cloud Platform.</h4>
  <p>Then go to:
   <ul>
      <li>Compute Engine > VM Instances > Create Instance
