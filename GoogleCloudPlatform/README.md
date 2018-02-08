@@ -10,7 +10,7 @@
   <li>Then select zone (us-east1-b is the cheapest one)</li>
   <li>Number of CPUs, memory and GPUs according to your needs</li>
 </ul> 
-<img src=Images/Selection_002.png">
+<img src="Images/Selection_002.png">
  <ul>
   <li>Select Ubuntu 16.04 with 40GB space</li>
   <li>Allow both firewall checkboxes</li>
