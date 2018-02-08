@@ -4,7 +4,7 @@
   <br>Compute Engine > VM Instances > Create Instance
   <br>and follow the steps described on the pictures:
 </p>
-<img src="https://github.com/RicardDurall/Machine-Learning/tree/master/GoogleCloudPlatform/Images/Selection_001.png">
+<img src="Images/Selection_001.png">
  <ul>
   <li>Choose a name that you like (e.g. test)</li>
   <li>Then select zone (us-east1-b is the cheapest one)</li>
