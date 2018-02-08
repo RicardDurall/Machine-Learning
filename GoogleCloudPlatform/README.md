@@ -1,8 +1,10 @@
-<h1>Create Virtual Machine and its dependencies</h1>
-<p>First of all create an account on Google Clous Platform.
-  <br>Then go to:
-  <br>Compute Engine > VM Instances > Create Instance
-  <br>and follow the steps described on the pictures:
+<h1>Create Virtual Machine and its dependencies</h4>
+<h4>First of all create an account on Google Clous Platform.</h4>
+ <p>Then go to:
+  <ul>
+     <li>Compute Engine > VM Instances > Create Instance
+     <li>follow the steps described on the pictures:
+  </ul>
 </p>
 <img src="Images/Selection_001.png">
  <ul>
@@ -16,8 +18,8 @@
   <li>Allow both firewall checkboxes</li>
   <li>Add yout SSH public key if you have one (Optional)</li>
 </ul>
-<p>Now let's get and static IP and set a new firewall rule:
-  <br>First go to:
+<h4>Now let's get and static IP and set a new firewall rule</h4>
+  <p>First go to:
   <ul>
      <li>VPC network > External IP addresses 
      <li>asign one IP to your VM
