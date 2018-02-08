@@ -58,7 +58,7 @@ https://developer.nvidia.com/cuda-downloads
 
 https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_20161129/8.0/libcudnn5_5.1.10-1+cuda8.0_amd64-deb
 <pre>scp /home/ricard/Downloads/libcudnn5_5.1.10-1+cuda8.0_amd64.deb ricard.durall@35.185.210.7:/home/ricard.durall/</pre>
-Note: 35.185.210.7 this is my static IP, change for yours
+<ins>Note: 35.185.210.7 this is my static IP, change for yours</ins>
 <pre>sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb</pre>
 
 Switch off your VM, and check GPU information:
@@ -75,4 +75,26 @@ bash Anaconda3-4.0.0-Linux-x86_64.sh</pre>
 #[yes|no][no] >>> yes</pre>
 
 <pre>source ~/.bashrc</pre>
+
+<h3>New environment</h3>
+<pre>conda create -n tf2 pip python=2.7
+source activate tf2
+pip install tensorflow-gpu==1.2.1 keras==2.0.6</pre>
+
+<h3>Jupyter</h3>
+<pre>conda install jupyter</pre>
+Try:
+<pre>ls ~/.jupytexiter/jupyter_notebook_config.py</pre>
+
+If it doesn’t exist, create one:
+
+<pre>jupyter notebook --generate-config</pre>
+
+#copy following code inside jupyter_notebook_config.py
+c = get_config()
+c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8000 
+
+<ins>Note:8000 accoridng to the port defined in the new firewall rule</ins>
 
