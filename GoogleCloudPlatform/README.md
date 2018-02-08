@@ -61,7 +61,7 @@ https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_201
 <ins>Note: 35.185.210.7 this is my static IP, change for yours</ins>
 <pre>sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb</pre>
 
-Switch off your VM, and check GPU information:
+Reset your VM, and check GPU information:
 <pre>nvidia-smi</pre>
 
 <h3>Anaconda</h3>
