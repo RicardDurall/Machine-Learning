@@ -90,12 +90,11 @@ If it doesn’t exist, create one:
 
 <pre>jupyter notebook --generate-config</pre>
 
-#copy following code inside jupyter_notebook_config.py
-<p>c = get_config()
-<br>c.NotebookApp.ip = '*'
-<br>c.NotebookApp.open_browser = False
-<br>c.NotebookApp.port = 8000 
-</p>
+Copy following code inside jupyter_notebook_config.py
+<pre>c = get_config()
+c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8000 </pre>
 <ins>Note:8000 accoridng to the port defined in the new firewall rule</ins>
 
 Finally add the new environment to the Jupter notebook
