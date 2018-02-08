@@ -10,7 +10,7 @@
   <li>Then select zone (us-east1-b is the cheapest one)</li>
   <li>Number of CPUs, memory and GPUs according to your needs</li>
 </ul> 
-<img src="https://github.com/RicardDurall/Machine-Learning/tree/master/GoogleCloudPlatform/Images/Selection_002.png">
+<img src=Images/Selection_002.png">
  <ul>
   <li>Select Ubuntu 16.04 with 40GB space</li>
   <li>Allow both firewall checkboxes</li>
@@ -24,7 +24,7 @@
   <br>VPC network > Firewall rule details
   <br>and copy the values described on the picture:
 </p>
-<img src="https://github.com/RicardDurall/Machine-Learning/tree/master/GoogleCloudPlatform/Images/Selection_003.png">
+<img src="Images/Selection_003.png">
 
 Congrats your VM is ready to be used!!
 <h1>Installing NVIDIA CUDA on Google Cloud Platform with Tesla K80 and Ubuntu 16.04</h1>
