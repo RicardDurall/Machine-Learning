@@ -39,9 +39,9 @@ lspci | grep -i NVIDIA
 <h3>NVIDIA drivers</h3>
 We will install the NVIDIA Tesla Driver via deb package.
 <p>&#9658; 
-  <br>wget http://us.download.nvidia.com/tesla/375.66/nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
-  <br>sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
-  <br>sudo apt-get update
+  wget http://us.download.nvidia.com/tesla/375.66/nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
+  sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
+  sudo apt-get update
   <br>sudo apt-get install cuda-drivers
 </p>
 <h3>CUDA toolkit</h3>
