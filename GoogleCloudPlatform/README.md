@@ -38,7 +38,7 @@ Tested with 1x Tesla K80.
 <pre>lspci | grep -i NVIDIA</pre>
 
 <h3>NVIDIA drivers</h3>
-We will install the<a href="http://www.nvidia.com/download/driverResults.aspx/118962/en-us">NVIDIA Tesla Driver</a>via deb package. </p> 
+We will install the <a href="http://www.nvidia.com/download/driverResults.aspx/118962/en-us">NVIDIA Tesla Driver</a>via deb package. </p> 
 <pre>wget http://us.download.nvidia.com/tesla/375.66/nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
   <br>sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
   <br>sudo apt-get update
@@ -53,10 +53,11 @@ https://developer.nvidia.com/cuda-downloads
 </pre>
 <h3>cuDNN</h3>
 <p>TensorFlow 1.2.1 needs cuDNN 5.1 (not 6.0).</p>
-<p>Needs to be downloaded via registered<a href="https://developer.nvidia.com/rdp/cudnn-download">NVIDIA account</a>.</p> 
+<p>Needs to be downloaded via registered <a href="https://developer.nvidia.com/rdp/cudnn-download">NVIDIA account</a>.</p> 
 <p>This can be downloaded from a browser and then copied to the target machine via SCP:</p>
 
 https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod_20161129/8.0/libcudnn5_5.1.10-1+cuda8.0_amd64-deb
-
-sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64-deb
+<pre>scp /home/ricard/Downloads/libcudnn5_5.1.10-1+cuda8.0_amd64.deb ricard.durall@35.185.210.7:/home/ricard.durall/</pre>
+Note: 35.185.210.7 this is my static IP, change for yours
+<pre>sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb</pre>
 
