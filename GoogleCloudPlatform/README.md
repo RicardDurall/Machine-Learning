@@ -34,6 +34,7 @@ Congrats your VM is ready to be used!!
   <li>CUDA Toolkit 8.0</li>
   <li>cuDNN 5.1 </li>
 </ul>
+Tested with 1x Tesla K80.
 <pre> lspci | grep -i NVIDIA</pre>
 
 <h3>NVIDIA drivers</h3>
