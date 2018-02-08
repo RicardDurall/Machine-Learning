@@ -34,7 +34,7 @@ Congrats your VM is ready to be used!!
   <li>CUDA Toolkit 8.0</li>
   <li>cuDNN 5.1 </li>
 </ul>
-Tested with 1x Tesla K80.
+Check you have GPU available.
 <pre>lspci | grep -i NVIDIA</pre>
 
 <h3>NVIDIA drivers</h3>
@@ -100,3 +100,9 @@ If it doesn’t exist, create one:
 
 Finally add the new environment to the Jupter notebook
 <pre>python -m ipykernel install --user --name tf2 --display-name "Python (myenv)"</pre>
+
+
+<h3>Other important links where I got part of the info:</h3>
+<p>https://gist.github.com/bzamecnik/b0c342d22a2a21f6af9d10eba3d4597b</p>
+<p>https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52</p>
+<p>http://cs231n.github.io/gce-tutorial/</p>
