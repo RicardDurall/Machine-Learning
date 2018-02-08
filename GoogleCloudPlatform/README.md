@@ -34,17 +34,17 @@ Congrats your VM is ready to be used!!
   <li>CUDA Toolkit 8.0</li>
   <li>cuDNN 5.1 </li>
 </ul>
-lspci | grep -i NVIDIA
+<pre> lspci | grep -i NVIDIA</pre>
 
 <h3>NVIDIA drivers</h3>
 We will install the NVIDIA Tesla Driver via deb package.
 <pre>wget http://us.download.nvidia.com/tesla/375.66/nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
-  <br>sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb </p>
-  <br>sudo apt-get update </p>
+  <br>sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
+  <br>sudo apt-get update
   <br>sudo apt-get install cuda-drivers 
 </pre>
 <h3>CUDA toolkit</h3>
-<pre> wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+<pre>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
   <br>sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
   <br>sudo apt-get update
   <br>sudo apt-get install cuda-8.0
