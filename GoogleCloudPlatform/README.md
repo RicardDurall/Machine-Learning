@@ -18,11 +18,15 @@
 </ul>
 <p>Now let's get and static IP and set a new firewall rule:
   <br>First go to:
-  <br>VPC network > External IP addresses 
-  <br>asign one IP to your VM
+  <ul>
+     <li>VPC network > External IP addresses 
+     <li>asign one IP to your VM
+  </ul>
   <br>Then go to:
-  <br>VPC network > Firewall rule details
-  <br>and copy the values described on the picture:
+    <ul>
+     <li>VPC network > Firewall rule details
+     <li>copy the values described on the picture:
+  </ul>
 </p>
 <img src="Images/Selection_003.png">
 
@@ -38,7 +42,7 @@ Check you have GPU available.
 <pre>lspci | grep -i NVIDIA</pre>
 
 <h3>NVIDIA drivers</h3>
-We will install the <a href="http://www.nvidia.com/download/driverResults.aspx/118962/en-us">NVIDIA Tesla Driver</a>via deb package. </p> 
+We will install the <a href="http://www.nvidia.com/download/driverResults.aspx/118962/en-us">NVIDIA Tesla Driver</a> via deb package. </p> 
 <pre>wget http://us.download.nvidia.com/tesla/375.66/nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
   <br>sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604_375.66-1_amd64.deb
   <br>sudo apt-get update
@@ -95,7 +99,7 @@ Copy following code inside jupyter_notebook_config.py
 c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False
 c.NotebookApp.port = 8000 </pre>
-<ins>Note:8000 accoridng to the port defined in the new firewall rule</ins>
+<ins>Note: 8000 accoridng to the port defined in the new firewall rule</ins>
 
 Finally add the new environment to the Jupter notebook
 <pre>python -m ipykernel install --user --name tf2 --display-name "Python (myenv)"</pre>
