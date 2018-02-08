@@ -1,5 +1,4 @@
-<h1>Installing NVIDIA CUDA on Google Cloud Platform with Tesla K80 and Ubuntu 16.04</h1>
-<h2>Create Virtual Machine</h2>
+<h1>Create Virtual Machine and its dependencies</h1>
 <p>First of all create an account on Google Clous Platform.
   <br>Then go to:
   <br>Compute Engine > VM Instances > Create Instance
@@ -17,7 +16,6 @@
   <li>Allow both firewall checkboxes</li>
   <li>Add yout SSH public key if you have one (Optional)</li>
 </ul>
-Congrats VM created!!
 <p>Now let's get and static IP and set a new firewall rule:
   <br>First go to:
   <br>VPC network > External IP addresses 
@@ -27,3 +25,6 @@ Congrats VM created!!
   <br>and copy the values described on the picture:
 </p>
 <img src="https://github.com/RicardDurall/Machine-Learning/tree/master/GoogleCloudPlatform/Images/Selection_003.png">
+
+Congrats your VM is ready to be used!!
+<h1>Installing NVIDIA CUDA on Google Cloud Platform with Tesla K80 and Ubuntu 16.04</h1>
