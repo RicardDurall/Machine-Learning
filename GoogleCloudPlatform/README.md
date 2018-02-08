@@ -76,12 +76,12 @@ bash Anaconda3-4.0.0-Linux-x86_64.sh</pre>
 
 <pre>source ~/.bashrc</pre>
 
-<h3>New environment</h3>
+<h3>New environment with Tensorflow-gpu</h3>
 <pre>conda create -n tf2 pip python=2.7
 source activate tf2
 pip install tensorflow-gpu==1.2.1 keras==2.0.6</pre>
 
-<h3>Jupyter</h3>
+<h3>Jupyter notebook</h3>
 <pre>conda install jupyter</pre>
 Try:
 <pre>ls ~/.jupytexiter/jupyter_notebook_config.py</pre>
@@ -91,10 +91,12 @@ If it doesn’t exist, create one:
 <pre>jupyter notebook --generate-config</pre>
 
 #copy following code inside jupyter_notebook_config.py
-c = get_config()
-c.NotebookApp.ip = '*'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 8000 
-
+<p>c = get_config()
+<br>c.NotebookApp.ip = '*'
+<br>c.NotebookApp.open_browser = False
+<br>c.NotebookApp.port = 8000 
+</p>
 <ins>Note:8000 accoridng to the port defined in the new firewall rule</ins>
 
+Finally add the new environment to the Jupter notebook
+<pre>python -m ipykernel install --user --name tf2 --display-name "Python (myenv)"</pre>
