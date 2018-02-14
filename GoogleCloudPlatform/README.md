@@ -36,8 +36,8 @@
   <br>Go to:
     <ul>
      <li>Compute Engine > Quotas > IAM & admin
-     <li>In Metric select tyoe the GPU that you want
-     <li>Select the service that belongs to your Region
+     <li>In Metric select the type of GPU that you want (e.g. NVIDIA K80)
+     <li>In Service select the Region that your VM is (e.g. us-west1)
      <li>And go to edit quotas and follow the steps from the GCP
   </ul>
 </p>
