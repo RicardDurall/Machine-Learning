@@ -1,5 +1,5 @@
 <h1>Create Virtual Machine and its dependencies</h4>
-<h4>First of all create an account on Google Cloud Platform.</h4>
+<h4>First of all create an account on Google Cloud Platform (GCP).</h4>
  <p>Then go to:
   <ul>
      <li>Compute Engine > VM Instances > Create Instance
@@ -32,7 +32,16 @@
   </ul>
 </p>
 <img src="Images/Selection_003.png">
-
+<h4>Finally, we need to request quotas, so that we can use the GPUs</h4>
+  <br>Go to:
+    <ul>
+     <li>Compute Engine > Quotas > IAM & admin
+     <li>In Metric select tyoe the GPU that you want
+     <li>Select the service that belongs to your Region
+     <li>And go to edit quotas and follow the steps from the GCP
+  </ul>
+</p>
+<img src="Images/Selection_004.png">
 Congrats your VM is ready to be used!!
 <h1>Installing NVIDIA CUDA on Google Cloud Platform with Tesla K80 and Ubuntu 16.04</h1>
 <h3>Technical Specifications</h3>
