@@ -1,2 +1,2 @@
 # Machine-Learning
-This repo consists of folders containing different machine learning implementation.
+This repo consists of folders containing different machine learning implementations.
